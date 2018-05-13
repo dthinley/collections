@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>To dos </title>
+      <!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- Custum CSS -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+   </head>
+   <body>
+      <div class="container">
+      	<div class="row">
+         <div class="col-lg-6 col-xs-12">
+            <h3>What needs to be done?</h3>
+            
+            <form action="#" id="form">
+               
+               <input type="text" id="todo" class="inputBox" placeholder="Enter your new task here.."><br>
 
+               
+               <button id ="add" class="btn btn-primary btn-lg btn-block">Add</button>
+            </form>
+        </div>
+        <div class="col-lg-6 col-xs-12">
+            <h2>My Todo List</h2>
+            <div id="todoList" class="list"></div>
+         </div>
+      </div>
+  </div>
+      <script src="js/main.js"></script>
+   </body>
+</html>
