@@ -9,11 +9,14 @@ eventListeners();
 
 function eventListeners() {
 
-	document.querySelector("#form").addEventListener('submit', newItem);
+	document.querySelector("#form").addEventListener('submit', newTodo);
 
 
 	//Remove from the list
 	todoList.addEventListener('click', removeTodo);
+
+	//document
+	document.addEventListener('DOMContendLoaded', localStorageOnLoad);
 
 
 }
@@ -32,7 +35,7 @@ document.body.addEventListener("click", function (event) {
 
 //FUNCTIONS
 
-function newItem(e) {
+function newTodo(e) {
 	e.preventDefault();
 
 	//Read the textarea value
@@ -56,17 +59,62 @@ function newItem(e) {
 	}
 	document.getElementById("todo").value = "";
 
-
 	//Add remove button
 	li.appendChild(removeBtn);
+
+	//Add to local storage
+
+	addTodoLocalStorage(todo);
 
 
 }
 
 
-//remove 
+//remove todo list
 function removeTodo(e) {
 	if (e.target.classList.contains('remove')) {
 		e.target.parentElement.remove();
 	}
+}
+
+function addTodoLocalStorage(todo){
+	var todos = getTodosFromStorage();
+
+	todos.push(todo);
+
+	//convert todo array into string
+	localStorage.setItem('todos', JSON.stringify(todos));
+
+}
+
+function getTodosFromStorage(){
+	var todos;
+	var todosLS = localStorage.getItem('todos');
+	//get the values, if null is returned then we create an empy array
+	if(todosLS === null) {
+		todos =[]
+	}else{
+		todos = JSON.parse(todosLS);
+	}
+	return todos;
+}
+
+//display from local storage 
+function localStorageOnLoad(){
+	var todos = getTodosFromStorage();
+	
+	//looping through storage and display
+	todos.forEach(function(todo){
+	
+	//create an <li> element
+	var li = document.createElement('li');
+	li.textContent = todo;
+	
+	//Add remove button
+	li.appendChild(removeBtn);
+	todoList.appendChild(li);
+
+
+	
+});
 }
