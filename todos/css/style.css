@@ -40,6 +40,12 @@ h2{
 
 }
 
+
+.list{
+	margin-left: 10%;
+	margin-top: 25px;
+}
+
 .selected { 
 	
 	text-decoration: line-through;
@@ -78,8 +84,4 @@ li{
 	color: red;
 	
 
-}
-.list{
-	margin-left: 10%;
-	margin-top: 25px;
 }
