@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Website bookmarker</title>
+      <!--custom CSS style -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <!--google font -->
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+   </head>
+   <body>
+      <div class="container">
+         <h1 class="text-muted text-center">My Favourite website</h1>
+         
 
+         <div class="box">
+         	<form id="form">
+            
+<!--First Input Section--->
+            <div class="input">
+               <form id="form-group">
+                  <label>website Name</label>
+                  <input type="text" class="form-control"  id="sitesName" placeholder="website name">
+            </div>
+            
+
+<!--Second Input Section--->
+            <div class="input">
+            <form id="form-group">
+            <label>website Url</label>
+            <input type="text" class="form-control"  placeholder="website url" id ="url">
+            </div>
+            
+
+<!--Submit Button Section--->
+            <button type="submit" class="btn btn-primary" id="add">Submit</button>
+         </div>
+         </form>
+      </div>
+
+<!--Display Input List Section--->
+      <div class="list"></div>
+
+
+<!--Javascript src Section--->
+      <script src ="js/main.js"></script>
+   </body>
+</html>
