@@ -1,1 +1,72 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age validation</title>
+	<style>
+
+	.eligible{
+		color: green;
+		font-weight: 800;
+	}
+
+	.notnumber{
+		color: red;
+		font-weight: 800;
+	}
+
+	.noteligible{
+		color: blue;
+		font-weight: 800;
+	}
+
+	</style>
+</head>
+<body>
+	<h1>Age validation</h1>
+
+	<input type="text" name="" placeholder="Enter Your Age.." id ="ageInput">
+	<button id="submit">Submit</button>
+	<p id="page"></p>
+
+
+
+<script>
+	
+var submit = document.getElementById("submit");
+
+
+//add even handler
+
+submit.addEventListener('click', function(){
+	
+	addAge();
+
+})
+
+//Function for adding age in input
+function addAge(){
+var ageInput= document.getElementById("ageInput").value;
+
+//check if age is 18 or over
+
+if(ageInput >=18){
+	document.getElementById("page").innerHTML="You are eligible to vote! Pleae go ahead..";
+	document.getElementById("page").className ="eligible";
+
+// check if input is valid
+}else if
+	(isNaN(ageInput)){
+		document.getElementById("page").innerHTML="Please input valid no..";
+		document.getElementById("page").className ="notnumber";
+	
+}else{
+	document.getElementById("page").innerHTML="You are not yet 18. Please come back when you are 18";
+	document.getElementById("page").className ="noteligible";
+	}
+}
+
+</script>
+
+</body>
+</html>
