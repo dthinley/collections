@@ -1,1 +1,99 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drop down Menu</title>
+	<style>
+
+	nav{
+		background-color: gray;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+
+	.logo{
+		width: 10%;
+	}
+
+	ul{
+		list-style: none;
+	}
+
+	.menu-ctn > li{
+			display: inline-block;
+			background-color: #fff;
+			padding: 10px 15px;
+			transition: all 0.8s ease-in;
+			position: relative;
+
+
+		}	
+
+	.menu-ct li:hover{
+			cursor: pointer;
+			background-color: green;
+		}
+
+		#dropdown{
+			display: none;
+			position: absolute;
+			width: 100%;
+			z-index: 1;
+			text-align: center;
+			left: 0;
+			top: 100%;
+			
+		}
+
+		#dropdown li{
+			padding: 10px 15px;
+			
+		}
+
+		#dropdown.active{
+			display: block;
+		
+		}
+
+		
+	</style>
+</head>
+<body>
+	<nav>
+	<div class="logo">
+		<img src="" alt="logo">
+	</div>
+				<ul class="menu-ctn">
+					<li><a href="#">Home</a></li>
+					<li id ="menu">
+					Browse
+					<ul id ="dropdown">
+					<li><a href="#">Demand</a></li>
+					<li><a href="#">list</a></li>
+
+				</ul>
+			</li>
+				<li><a href="about">About</a></li>
+				<li><a href="about">Contact</a></li>
+			</ul>
+				</nav>
+
+<script>
+	document.getElementById("menu").addEventListener('click', openMenu);
+		
+
+	function openMenu(){
+		document.getElementById("dropdown").classList.toggle("active");
+
+	}
+
+
+
+
+
+</script>
+</body>
+</html>
