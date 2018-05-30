@@ -1,1 +1,16 @@
+.container{
+	width: 50%;
+	margin: 5% auto;
+}
 
+.result{
+	color: white;
+	background-color: blue;
+	width: 40%;
+	margin-left: 8%;
+	padding: 10px;
+	text-align: center;
+	font-size: 24;
+	font-weight: 800;
+
+}
